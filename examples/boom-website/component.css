@@ -1,0 +1,36 @@
+:root {
+    --primary-color: rgb(103, 113, 235);
+    --primary-text-color: rgb(42, 85, 47);
+    --secondary-text-color: #000;
+    --secondary-background-color: rgb(246, 242, 235);
+    --color-yellow: rgb(243, 195, 93);
+    --color-red: rgb(234, 51, 35);
+    --border-primary: 3px solid var(--primary-color);
+    --text-border-primary: 1px solid var(--secondary-text-color);
+}
+
+div[flex] {
+    display: flex;
+    gap: 16px;
+}
+
+p[title] {
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 16px auto;
+    border-bottom: var(--text-border-primary);
+    padding: 8px 32px;
+}
+p[sub-title] {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+p:not([title], [sub-title]) {
+    font-style: italic;
+}
+p[center] {
+    text-align: center;
+}

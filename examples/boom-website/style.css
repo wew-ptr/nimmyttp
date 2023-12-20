@@ -1,0 +1,84 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    padding: 16px;
+    background-color: var(--secondary-background-color);
+    border-bottom: var(--border-primary);
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+:is(header, footer) h1 {
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: var(--primary-color);
+    width: calc(70% - 160px);
+}
+:is(header, footer) a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: bolder;
+}
+footer {
+    background-color: var(--secondary-background-color);
+    border-top: var(--border-primary);
+    margin-top: 32px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+}
+footer h1 {
+    width: fit-content;
+    margin-right: 16px;
+}
+
+section {
+    padding: 16px;
+}
+section div[flex] img {
+    width: 100%;
+}
+
+div[stamps] {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+div[stamp]:nth-child(2) {
+    scale: 1.1;
+}
+div[stamp] {
+    width: 100%;
+    position: relative;
+}
+div[stamp],
+div[stamp]::before,
+div[stamp]::after {
+    background-image: var(--src);
+    aspect-ratio: 1 / 1;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+div[stamp]::before,
+div[stamp]::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+div[stamp]::before {
+    left: 10px;
+    top: 10px;
+}
+div[stamp]::after {
+    left: 20px;
+    top: 20px;
+}
